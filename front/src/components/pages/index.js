@@ -1,0 +1,10 @@
+export { BlogPage } from "./Blog";
+export { Footer } from "./Footer";
+export { ContactUs } from "./ContactUs";
+export { CareerPage } from "./Career";
+export { AboutPage } from "./About";
+export { Error404 } from "./Error404";
+export { FullBlog } from "./FullBlog";
+export { ProductPage } from "./Product";
+export { IndustryPage } from "./Industry";
+export { LandingPage } from "./LandingPage";

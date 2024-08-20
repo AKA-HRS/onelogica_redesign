@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  /* Customizing the scrollbar width */
+  html *::-webkit-scrollbar {
+    @apply w-2; /* Set the width of the scrollbar */
+  }
+
+  /* Styling the scrollbar track */
+  html *::-webkit-scrollbar-track {
+    @apply bg-[#000000]; /* Background color */
+  }
+
+  /* Styling the scrollbar thumb with a border radius */
+  html *::-webkit-scrollbar-thumb {
+    @apply bg-[#fff] rounded-full; /* Thumb color and fully rounded corners */
+  }
+
+  /* Adding hover effect to the scrollbar thumb */
+  html *::-webkit-scrollbar-thumb:hover {
+    @apply bg-[#ffffffd7] rounded-full; /* Lighter color on hover with rounded corners */
+  }
+
+  /* Customizing the scrollbar for Firefox */
+  ::-webkit-scrollbar-thumb {
+    scrollbar-width: thin; /* Set the scrollbar width to thin */
+    scrollbar-color: #ffffff #000000; /* Set the thumb and track colors */
+  }
+
+  :root {
+    --deg1: 0deg;
+    --deg2: 90deg;
+    --colorr: #000102f5;
+  }
+  .grid-background::before {
+    opacity: 0.7;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient(#303030 1px, transparent 1px),
+      linear-gradient(90deg, #303030 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+  }
+  .grid-background::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        var(--deg1),
+        rgba(17, 17, 17, 0) 60%,
+        var(--colorr) 100%
+      ),
+      linear-gradient(var(--deg2), rgba(17, 17, 17, 0) 60%, var(--colorr) 100%);
+    pointer-events: none;
+  }
+  @media (max-width: 480px) {
+    .grid-background::before {
+      background-size: 20px 20px;
+    }
+
+    .grid-background::after {
+      background: linear-gradient(
+          var(--deg1),
+          rgba(17, 17, 17, 0) 40%,
+          #000102f5 100%
+        ),
+        linear-gradient(var(--deg2), rgba(17, 17, 17, 0) 40%, #000102f5 100%);
+    }
+  }
+
+  .hover-strike-through::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.8);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+  }
+
+  .hover-strike-through:hover::before {
+    transform: scaleX(1);
+  }
+
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1); /* Inverts the color of the icon */
+  }
+
+  /* For Firefox (may not work reliably) */
+  input[type="date"]::-moz-calendar-picker-indicator {
+    filter: invert(1); /* Inverts the color of the icon */
+  }
+}
