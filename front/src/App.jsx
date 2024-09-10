@@ -1,14 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Layout from "./Layout";
-import {
-  Landing,
-  About,
-  Carrer,
-  Industry,
-  Product,
-  Blog,
-  Contact,
-} from "./components/screens";
+import { Landing, About, Carrer, Industry, Product, Blog, Contact } from "./components/screens";
 import axios from "axios";
 import { Error404, FullBlog } from "./components/pages";
 import { useEffect, useState } from "react";

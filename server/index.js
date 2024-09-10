@@ -11,10 +11,12 @@ app.use(
   cors({
     credentials: true,
     methods: ["GET", "POST"],
-    origin: process.env.ORIGIN ,
+    origin: process.env.ORIGIN,
   })
 );
-
+app.get('/',async(req,res)=>{
+  res.json({message:"hii visitor"})
+})
 app.set("view engine", "ejs");
 app.set("views", path.resolve("./views"));
 app.use("/blog", blog);
