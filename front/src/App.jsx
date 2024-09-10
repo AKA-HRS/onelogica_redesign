@@ -6,7 +6,7 @@ import { Error404, FullBlog } from "./components/pages";
 import { useEffect, useState } from "react";
 import Preloader from "./components/preloader/Preloader";
 
-axios.defaults.baseURL = "https://onelogica-redesign.vercel.app";
+axios.defaults.baseURL = "https://logica-redesign.vercel.app";
 axios.defaults.withCredentials = true;
 
 function App() {
@@ -16,7 +16,6 @@ function App() {
     const timer = setTimeout(() => {
       setLoading(false);
     }, 2000);
-
     return () => clearTimeout(timer);
   }, []);
   return (

@@ -56,6 +56,5 @@ const blogSlice = createSlice({
   },
 });
 
-export const { decryptBlogData, setBlogData, setSelectedBlog } =
-  blogSlice.actions;
+export const { decryptBlogData, setBlogData, setSelectedBlog } = blogSlice.actions;
 export default blogSlice.reducer;
