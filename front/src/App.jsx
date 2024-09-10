@@ -14,7 +14,7 @@ import { Error404, FullBlog } from "./components/pages";
 import { useEffect, useState } from "react";
 import Preloader from "./components/preloader/Preloader";
 
-axios.defaults.baseURL = "http://localhost:3000";
+axios.defaults.baseURL = "https://onelogica-redesign.vercel.app";
 axios.defaults.withCredentials = true;
 
 function App() {
